@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <_PublishTargetUrl>ftp://www.lachlanrutherford.com/lachlanrutherford.com/wwwroot/asp</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>06/08/2015 16:03:02</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>06/08/2015 16:03:02</publishTime>
+    </File>
+    <File Include="bin/BirdWatcherRuthlr1.dll">
+      <publishTime>06/08/2015 16:08:06</publishTime>
+    </File>
+    <File Include="bin/BirdWatcherRuthlr1.pdb">
+      <publishTime>06/08/2015 16:04:55</publishTime>
+    </File>
+    <File Include="Birds.aspx">
+      <publishTime>03/16/2015 09:07:02</publishTime>
+    </File>
+    <File Include="Birds.aspx.cs">
+      <publishTime>03/15/2015 15:39:22</publishTime>
+    </File>
+    <File Include="Birds.aspx.designer.cs">
+      <publishTime>03/14/2015 12:39:32</publishTime>
+    </File>
+    <File Include="BirdStyleSheet.css">
+      <publishTime>03/15/2015 19:14:33</publishTime>
+    </File>
+    <File Include="BirdWatcherRuthlr1.csproj">
+      <publishTime>06/08/2015 15:39:14</publishTime>
+    </File>
+    <File Include="BirdWatcherRuthlr1.csproj.user">
+      <publishTime>06/08/2015 15:39:14</publishTime>
+    </File>
+    <File Include="DBManager.cs">
+      <publishTime>03/16/2015 09:06:54</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>03/16/2015 09:07:28</publishTime>
+    </File>
+    <File Include="Default.aspx.cs">
+      <publishTime>03/13/2015 12:26:59</publishTime>
+    </File>
+    <File Include="Default.aspx.designer.cs">
+      <publishTime>03/13/2015 13:04:22</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/09/2015 15:04:17</publishTime>
+    </File>
+    <File Include="Global.asax.cs">
+      <publishTime>09/03/2015 15:04:17</publishTime>
+    </File>
+    <File Include="images/birds.jpg">
+      <publishTime>03/11/2015 14:51:25</publishTime>
+    </File>
+    <File Include="images/birdwatching.jpg">
+      <publishTime>03/13/2015 13:03:51</publishTime>
+    </File>
+    <File Include="Members.aspx">
+      <publishTime>03/16/2015 09:07:15</publishTime>
+    </File>
+    <File Include="Members.aspx.cs">
+      <publishTime>03/15/2015 14:24:16</publishTime>
+    </File>
+    <File Include="Members.aspx.designer.cs">
+      <publishTime>03/13/2015 09:41:46</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>06/08/2015 16:03:01</publishTime>
+    </File>
+    <File Include="Properties/AssemblyInfo.cs">
+      <publishTime>09/03/2015 15:04:16</publishTime>
+    </File>
+    <File Include="Properties/PublishProfiles/name.pubxml">
+      <publishTime>06/08/2015 15:56:07</publishTime>
+    </File>
+    <File Include="Sighting.aspx">
+      <publishTime>03/15/2015 19:48:17</publishTime>
+    </File>
+    <File Include="Sighting.aspx.cs">
+      <publishTime>03/15/2015 15:23:08</publishTime>
+    </File>
+    <File Include="Sighting.aspx.designer.cs">
+      <publishTime>03/13/2015 12:40:21</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/08/2015 16:08:56</publishTime>
+    </File>
+    <File Include="Web.Debug.config">
+      <publishTime>06/08/2015 15:38:43</publishTime>
+    </File>
+    <File Include="Web.Release.config">
+      <publishTime>06/08/2015 15:38:43</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,5 @@
+H:\Web3\labs\BirdWatcherRuthlr1\BirdWatcherRuthlr1\bin\BirdWatcherRuthlr1.dll
+H:\Web3\labs\BirdWatcherRuthlr1\BirdWatcherRuthlr1\bin\BirdWatcherRuthlr1.pdb
+H:\Web3\labs\BirdWatcherRuthlr1\BirdWatcherRuthlr1\obj\Release\BirdWatcherRuthlr1.dll
+H:\Web3\labs\BirdWatcherRuthlr1\BirdWatcherRuthlr1\obj\Release\BirdWatcherRuthlr1.pdb
+H:\Web3\labs\BirdWatcherRuthlr1\BirdWatcherRuthlr1\bin\BirdWatcherRuthlr1.dll.config
