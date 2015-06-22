@@ -1,2 +1,2 @@
 # BIT-2015
-This will have code from all my work over the past 3 years
+I am a Bachelor of Information Technology student at Otago Polytechnic in Dunedin, New Zealand. This repository is to show my own work through this degree.
