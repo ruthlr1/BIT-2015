@@ -1,0 +1,120 @@
+﻿.page
+{  
+  margin: auto;
+  position:relative;
+  width:900px;
+  min-height: 1100px;
+  background-color:white;
+}
+
+.header
+{
+    position: relative;
+}
+
+.header h5
+{
+    text-align: right;
+    margin-right: 20px;
+}
+
+.navigation
+{
+    position:absolute;
+    top:300px;	
+    width:100%;
+    background-color:black;
+    height:70px;
+    line-height:40px;
+    margin-right:50px;
+}
+
+.navigation a
+{
+    font-size:16px;
+    font-weight:bold;
+    color: white;
+    margin-left:27px;
+    margin-right:27px;
+    text-decoration: none;
+}
+
+.navigation ul 
+{
+	list-style:none;
+	padding:0px;
+	text-align:right;
+}
+
+.navigation li 
+{
+	list-style:none;
+	padding:0px;	
+	display:inline;
+}
+
+.title
+{
+    position:absolute;
+    top: 380px;
+    margin-left: 50px;
+    font-size:18px;
+    font:bold;
+}
+
+
+.text
+{
+    position: relative;
+    margin-top:120px;
+    padding: 50px;
+    left: -4px;
+    width: 850px;
+}
+
+.text img
+{
+    float:right;
+    padding:30px;
+}
+ 
+body 
+{
+	margin: auto 0 auto auto;
+    text-align:left;
+	text-align:left;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:13px;
+	color:black;
+	background: #dbdbdb;
+}
+
+#addStudent table
+{
+    width:400px;
+}
+
+table
+{
+    
+    width:800px;
+}
+
+td, th
+{
+    line-height:20px;
+}
+
+table th 
+{
+    font-weight:bold;
+    background-color:#cca26d 
+}
+
+.input textbox
+{
+    float:right;
+    width:500px;
+}
+
+

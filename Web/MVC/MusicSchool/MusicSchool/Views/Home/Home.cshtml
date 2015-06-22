@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+}
+<!--
+    Lachie Rutherford
+    I do not have permission for all images that are used 
+-->
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+
+    <title> BIT Music School </title>
+
+    <link href="@Url.Content("~/MusicSchoolSS.css")" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+
+            <img id="img_Banner" alt="Banner" src="@Url.Content("~/Music.jpg")" width="900" />
+
+        </div>
+        <div class="logo"></div>
+        <div class="navigation">
+            <ul>
+                <li>@Html.ActionLink("Home", "Home", "Home")</li>
+                <li>@Html.ActionLink("Students", "ShowStudents", "Student")</li>
+                <li>@Html.ActionLink("Tutors", "ShowTutors", "Tutor")</li>
+                <li>@Html.ActionLink("Enrolment", "Enrolment", "School")</li>
+            </ul>
+        </div>
+
+        <div class="title">
+            <h2>  Home </h2>
+        </div>
+
+        <div class="text">
+            
+            <p>
+                <img id="img_homePic" alt="homePic" src="@Url.Content("~/groupMusic.jpg")" width="400" style="float:right;" />
+                Welcome to the Music School of Otago Polytechnic. There are five extremely talented tutors to teach the students. There will most likely be more tutors flooding into the music school in the next couple of days.
+                <br />
+                <br />
+                I would recommend signing up otherwise finding another music school with as much potential as with one is going to be hard.
+                <br />
+                <br />
+                Students are allowed to play one instrument each semester. They can either hire an instrument or they can use their own. The rental fee is quite expensive but it is going to be worth your penny. Hopefully you can get assigned to the tutor that best fits your needs.
+                <br />
+                <br />
+                Towards the end of the semester. All the students will come together and perform as one big awesome group. It is going to be an unreal experience for everyone involved so make sure to get in and sign up otherwise you will miss out.
+                <br />
+                <br />
+                Don't be shy and make the most of this opportunity.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+﻿@model List<MusicSchool.Models.Student>
+
+@{
+    Layout = null;
+}
+<!--
+    Lachie Rutherford
+    I do not have permission for all images that are used
+-->
+
+<<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+
+    <title> BIT Music School </title>
+
+    <link href="@Url.Content("~/MusicSchoolSS.css")" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+
+    <div class="page">
+        <div class="header">
+
+            <img id="img_Banner" alt="Banner" src="@Url.Content("~/Music.jpg")" width="900" />
+
+        </div>
+        <div class="logo"></div>
+        <div class="navigation">
+            <ul>
+                <li>@Html.ActionLink("Home", "Home", "Home")</li>
+                <li>@Html.ActionLink("Students", "ShowStudents", "Student")</li>
+                <li>@Html.ActionLink("Tutors", "ShowTutors", "Tutor")</li>
+                <li>@Html.ActionLink("Enrolment", "Enrolment", "School")</li>
+            </ul>
+        </div>
+
+        <div class="title">
+            <h2>  Enrolment </h2>
+        </div>
+
+        <div class="text">
+
+
+
+            <fieldset>
+                <h3>Assign a Tutor</h3>
+                @Html.ActionLink("Assign Tutors", "AssignTutors", "School")
+            </fieldset>
+
+            <br />
+            <fieldset>
+                <h3>Show All Classes</h3>
+                @Html.ActionLink("All Classes", "Classes", "School")
+            </fieldset>
+
+            <br />
+            <fieldset>
+                <h3>Change An Instrument</h3>
+                <table>
+                @using (Html.BeginForm("Enrolment", "School"))
+                    {
+                    <tr>
+                        <td>
+                            @Html.Label("Choose a Student")
+                        </td>
+                        <td>
+                            <select name="StudentsDD">
+                                @foreach (var students in Model)
+                                {
+                                    <option value="@students.StudentID">@students.FirstName @students.LastName</option>
+                                }
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.Label("Choose a new Instrument")
+                        </td>
+                        <td>
+                            @Html.DropDownList("AllInstrumentsDD")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" name="submit" value="Change Instrument" />
+                        </td>
+                    </tr>
+                }           
+                </table>
+            </fieldset>
+        </div>
+    </div>
+</body>
+</html>

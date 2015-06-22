@@ -1,0 +1,155 @@
+﻿@model List<MusicSchool.Models.Tutor>
+
+@{
+    Layout = null;
+}
+<!--
+    Lachie Rutherford
+    I do not have permission for all images that are used
+-->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+
+    <title> BIT Music School </title>
+
+    <link href="@Url.Content("~/MusicSchoolSS.css")" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+
+    <div class="page">
+        <div class="header">
+
+            <img id="img_Banner" alt="Banner" src="@Url.Content("~/Music.jpg")" width="900" />
+
+        </div>
+        <div class="logo"></div>
+        <div class="navigation">
+            <ul>
+                <li>@Html.ActionLink("Home", "Home", "Home")</li>
+                <li>@Html.ActionLink("Students", "ShowStudents", "Student")</li>
+                <li>@Html.ActionLink("Tutors", "ShowTutors", "Tutor")</li>
+                <li>@Html.ActionLink("Enrolment", "Enrolment", "School")</li>
+            </ul>
+        </div>
+
+        <div class="title">
+            <h2>  Tutors </h2>
+        </div>
+
+        <div class="text">
+
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone Number</th>
+                    <th>Qualification</th>
+                </tr>
+
+                @foreach (MusicSchool.Models.Tutor t in Model)
+                {
+                    <tr>
+                        <td> @t.FirstName</td>
+                        <td> @t.LastName</td>
+                        <td> @t.PhoneNumber</td>
+                        <td>
+                            @foreach (MusicSchool.Models.InstrumentQualification qualifications in t.InstrumentQualifications)
+                            {
+                                <p>Instrument: @qualifications.Instrument.Name, Level: @qualifications.Level</p>
+                            }
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+            <h3>Add a Tutor</h3>
+
+            @using (Html.BeginForm("ShowTutors", "Tutor"))
+            {
+                <table>
+                    <tr>
+                        <td>
+                            @Html.Label("First Name")
+                        </td>
+                        <td>
+                            @Html.TextBox("firstName")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.Label("Last Name")
+                        </td>
+                        <td>
+                            @Html.TextBox("lastName")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.Label("Phone Number")
+                        </td>
+                        <td>
+                            <input type="number" name="PhoneNumber" id="PhoneNumber" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" name="submit" value="Save" />
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <h3>Update the Qualification of a Tutor</h3>
+                <table>
+                    <tr>
+                        <td>
+                            @Html.Label("Choose a Tutor")
+                        </td>
+                        <td>
+                            <select name="TutorsDD">
+                                @foreach (var tutors in Model)
+                                {
+                                    <option value="@tutors.TutorID">@tutors.FirstName @tutors.LastName</option>
+                                }
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.Label("Instrument")
+                        </td>
+                        <td>
+                            @Html.DropDownList("AllInstrumentsDD")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.Label("Level")
+                        </td>
+                        <td>
+                            <select name="LevelDD">
+                                @for (int i = 1; i <= 9; i++)
+                                {
+                                    <option value="@i">@i</option>
+                                }
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" name="submit" value="Update Tutor" />
+                        </td>
+                    </tr>
+                </table>
+            }
+
+        </div>
+    </div>
+</body>
+</html>

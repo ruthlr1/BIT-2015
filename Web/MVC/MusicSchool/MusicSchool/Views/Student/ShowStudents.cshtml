@@ -1,0 +1,141 @@
+﻿@model List<MusicSchool.Models.Student>
+
+@{
+    Layout = null;
+}
+<!--
+    Lachie Rutherford
+    I do not have permission for all images that are used
+-->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+
+    <title> BIT Music School </title>
+
+    <link href="@Url.Content("~/MusicSchoolSS.css")" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+
+    <div class="page">
+        <div class="header">
+
+            <img id="img_Banner" alt="Banner" src="@Url.Content("~/Music.jpg")" width="900" />
+
+        </div>
+        <div class="logo"></div>
+        <div class="navigation">
+            <ul>
+                <li>@Html.ActionLink("Home", "Home", "Home")</li>
+                <li>@Html.ActionLink("Students", "ShowStudents", "Student")</li>
+                <li>@Html.ActionLink("Tutors", "ShowTutors", "Tutor")</li>
+                <li>@Html.ActionLink("Enrolment", "Enrolment", "School")</li>
+            </ul>
+        </div>
+
+        <div class="title">
+            <h2>  Students </h2>
+        </div>
+
+        <div class="text">
+
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone Number</th>
+                    <th>Age</th>
+                    <th>Owns the Instrument</th>
+                    <th>Details</th>
+                </tr>
+                @foreach (var student in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => student.FirstName)</td>
+                        <td>@Html.DisplayFor(modelItem => student.LastName)</td>
+                        <td>@Html.DisplayFor(modelItem => student.PhoneNumber)</td>
+                        <td>@Html.DisplayFor(modelItem => student.Age)</td>
+                        <td>@Html.DisplayFor(modelItem => student.OwnInstrument)</td>
+                        <td>@Html.ActionLink("Details", "Details", new { studentID = student.StudentID })</td>
+
+                    </tr>
+                }
+            </table>
+            <br />
+            <div id="addStudent">
+                <h3>Add a Student</h3>
+                <table>
+                    @using (Html.BeginForm("ShowStudents", "Student"))
+                    {
+                        <tr>
+                            <td>
+                                @Html.Label("First Name")
+                            </td>
+                            <td>
+                                @Html.TextBox("firstName")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.Label("Last Name")
+                            </td>
+                            <td>
+                                @Html.TextBox("lastName")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.Label("Phone Number")
+                            </td>
+                            <td>
+                                
+                                <input type="number" name="PhoneNumber" id="PhoneNumber" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.Label("Age")
+                            </td>
+                            <td>
+                                <input type="number" name="Age" id="Age" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.Label("Select an Instrument")
+                            </td>
+                            <td>
+                                @Html.DropDownList("AllInstrumentsDD")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.Label("Do You Own This Instrument?")
+                            </td>
+                            <td>
+                                <select name="OwnInstrumentDD">
+                                    <option value="true">Yes</option>
+                                    <option value="false">No</option>
+                                </select>
+
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" name="submit" value="Save" />
+                            </td>
+                        </tr>
+                    }
+                </table>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

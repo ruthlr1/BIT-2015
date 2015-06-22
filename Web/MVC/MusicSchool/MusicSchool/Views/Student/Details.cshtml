@@ -1,0 +1,88 @@
+﻿@model MusicSchool.Models.Student
+
+@{
+    Layout = null;
+}
+<!--
+    Lachie Rutherford
+    I do not have permission for all images that are used
+-->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+
+    <title> BIT Music School </title>
+
+    <link href="@Url.Content("~/MusicSchoolSS.css")" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+
+    <div class="page">
+        <div class="header">
+
+            <img id="img_Banner" alt="Banner" src="@Url.Content("~/Music.jpg")" width="900" />
+
+        </div>
+        <div class="logo"></div>
+        <div class="navigation">
+            <ul>
+                <li>@Html.ActionLink("Home", "Home", "Home")</li>
+                <li>@Html.ActionLink("Students", "ShowStudents", "Student")</li>
+                <li>@Html.ActionLink("Tutors", "ShowTutors", "Tutor")</li>
+                <li>@Html.ActionLink("Enrolment", "Enrolment", "School")</li>
+            </ul>
+        </div>
+
+        <div class="title">
+            <h2>  Details </h2>
+        </div>
+
+        <div class="text">
+
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone Number</th>
+                    <th>Age</th>
+                    <th>Instrument</th>
+                    <th>Rental Fee</th>
+                    <th>Tutor</th>
+                </tr>
+                <tr>
+                    <td>@Model.FirstName</td>
+                    <td>@Model.LastName</td>
+                    <td>@Model.PhoneNumber</td>
+                    <td>@Model.Age</td>                     
+                    <td>@Model.Instrument.Name</td>
+                    @if (Model.OwnInstrument == true)
+                    {
+                        
+                        <td>No Fee</td>
+                    }
+                    else
+                    { 
+                        <td>$@Model.Instrument.RentalFee</td>
+                    }
+                    @if (@Model.Tutor == null )
+                    {
+                        <td>No tutor has been assigned</td>
+                    }
+                    else
+                    {
+                        <td>@Model.Tutor.FirstName @Model.Tutor.LastName</td>
+                    }
+                    
+                </tr>
+            </table>
+            <br />
+                @Html.ActionLink("Back", "ShowStudents", "Student")
+        </div>
+    </div>
+</body>
+</html>

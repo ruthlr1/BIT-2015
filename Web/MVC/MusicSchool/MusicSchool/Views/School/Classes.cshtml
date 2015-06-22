@@ -1,0 +1,86 @@
+﻿@model List<MusicSchool.Models.Tutor>
+
+@{
+    Layout = null;
+}
+<!--
+    Lachie Rutherford
+    I do not have permission for all images that are used
+-->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+
+    <title> BIT Music School </title>
+
+    <link href="@Url.Content("~/MusicSchoolSS.css")" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+
+    <div class="page">
+        <div class="header">
+
+            <img id="img_Banner" alt="Banner" src="@Url.Content("~/Music.jpg")" width="900" />
+
+        </div>
+        <div class="logo"></div>
+        <div class="navigation">
+            <ul>
+                <li>@Html.ActionLink("Home", "Home", "Home")</li>
+                <li>@Html.ActionLink("Students", "ShowStudents", "Student")</li>
+                <li>@Html.ActionLink("Tutors", "ShowTutors", "Tutor")</li>
+                <li>@Html.ActionLink("Enrolment", "Enrolment", "School")</li>
+            </ul>
+        </div>
+
+        <div class="title">
+            <h2>  All Classes </h2>
+        </div>
+
+        <div class="text">
+
+            <table>
+                <tr>
+                    <th>Tutor Name</th>
+                    <th>Instrument</th>
+                    <th>Student Name</th>
+                </tr>
+                    
+                    @foreach(MusicSchool.Models.Tutor t in Model)
+                    { 
+                        
+                        <tr>
+                            <td>@t.FirstName @t.LastName</td>
+                            @foreach (MusicSchool.Models.InstrumentQualification qualifications in t.InstrumentQualifications)
+                            {                                       
+                                    foreach (MusicSchool.Models.Student s in t.Students)
+                                    {
+                                        if (s.InstrumentID == qualifications.InstrumentID)
+                                        {   
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                        @qualifications.Instrument.Name
+                                                </td>
+                                                <td>
+                                                    @s.FirstName @s.LastName
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                            }                                                           
+                         </tr>                       
+                    }
+
+            </table>
+            <br />
+            @Html.ActionLink("Back", "Enrolment", "School")
+        </div>
+    </div>
+</body>
+</html>
