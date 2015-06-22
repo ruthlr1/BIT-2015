@@ -1,0 +1,92 @@
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:weightSum="1"
+    android:background="#B0E2FF">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WISH LIST"
+        android:id="@+id/textViewTitle"
+        android:layout_gravity="center_horizontal"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:layout_marginLeft="70dp"
+        android:textColor="#ff000000" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="63dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextSearch"
+            android:inputType="textVisiblePassword"
+            android:hint="Search Items"/>
+    </GridLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewResponse"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:textColor="#000000" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:id="@+id/listViewAllItems"
+        android:layout_weight="0.48"
+        android:textColor="#ff000000"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewMessage"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:layout_weight="0.14"
+        android:layout_marginLeft="8dp"
+        android:singleLine="true"
+        android:textColor="#000000" />
+
+    <GridLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="18dp"
+        android:id="@+id/GVIcons">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imageViewInformation"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="left"
+            android:src="@drawable/ic_info_black_24dp" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imageViewNewItem"
+            android:src="@drawable/ic_playlist_add_black_24dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="15dp" />
+    </GridLayout>
+
+</LinearLayout>
+
+

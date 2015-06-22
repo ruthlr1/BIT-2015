@@ -1,0 +1,82 @@
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:weightSum="1"
+    android:background="#B0E2FF">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WISH STAR"
+        android:id="@+id/textViewTitle"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:textIsSelectable="true"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ff000000" />
+
+    <FrameLayout
+        android:layout_width="390dp"
+        android:layout_height="392dp"
+        android:background="#fff1fffd">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:text="Making  gift shopping hassle free and fun..."
+            android:id="@+id/textViewPhrase"
+            android:textStyle="bold|italic"
+            android:typeface="serif"
+            android:layout_marginTop="320dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000" />
+
+        <ImageView
+
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:id="@+id/imageView"
+            android:background="@drawable/gift"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:src="@drawable/gift"
+            android:layout_gravity="top|center" />
+    </FrameLayout>
+
+    <GridLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="5dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imageViewInformation"
+            android:layout_gravity="left"
+            android:src="@drawable/ic_info_black_24dp"
+            android:layout_marginLeft="15dp"
+            android:layout_row="1"
+            android:layout_column="0" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imageViewWishlist"
+            android:src="@drawable/ic_list_black_24dp"
+            android:layout_gravity="right"
+            android:layout_weight="0.06"
+            android:layout_row="1"
+            android:layout_column="1" />
+
+    </GridLayout>
+
+</LinearLayout>
+
