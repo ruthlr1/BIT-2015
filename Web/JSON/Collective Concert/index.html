@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Concert Collective</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
+
+     <!-- load jQuery -->
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!-- load Galleria -->
+    <script src="galleria-1.4.2.min.js"></script>
+ 
+  
+
+</head>
+
+
+
+<body>
+<!--import scripts -->
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript">
+  //Reads in Bandsintown API 
+  $(document).ready(function(){
+  
+  	$.ajax({
+  	
+  		type: "GET",
+  		url: "http://kate.ict.op.ac.nz/~scotcm1/AssignmentLachieCam/file.php",
+  		dataType: "JSON",		
+		async: false,
+  		success: Parser
+  	});
+  
+  });
+  
+  
+  
+  function Parser(Json)
+  {
+  //Output from API Read In
+  	$(Json.slice(0,10)).each(function(id,data){
+		//creating new Elements on the document
+		var contents = document.getElementsByClassName("row");
+		var doc = document.createElement("div");
+		var button = document.createElement("input");
+		var Heading = document.createElement("h3");
+		var date_item = document.createElement("p");
+		var artists = document.createElement("h4");
+	
+		//asssign classes, id's and types
+	    button.type = "button";
+		button.className = "btn";
+		button.value = "Show Artists"
+		button.id = "btn"
+		doc.id = "col-md-5";
+		doc.className = "col-md-5";
+		Heading.style = "color:blue"
+		
+		//Heading Text to display the Location of the event
+		Heading.innerText = "Event Location: "+ data['venue']['name'] +" - "+data['venue']['city']+", "+data['venue']['country'];
+		//Date Text to display the date of the event
+		date_item.innerText = "Date of Event: "+data['datetime'];
+		
+		//reads in each artist and inserts them into a <li>
+		artists.innerText = "Artists attending";
+		for (var i = 0; i< data['artists'].length; i++)
+		{  	
+			var listed_artists = document.createElement("li");
+			listed_artists.innerText = data['artists'][i]['name'];
+			artists.appendChild(listed_artists);
+		}
+		
+		
+		//Write the Generated code to the screen
+		doc.innerHTML+= "<hr />";
+		doc.appendChild(Heading);
+		doc.appendChild(artists);
+		doc.appendChild(date_item);
+		contents[0].appendChild(doc);
+				
+  	});
+  }
+  
+  //hover over event function
+  $(document).ready(function(){
+	  $(".col-md-5").hover(function(){
+		  $(this).css("background-color", "#E7E7E7");
+		   }, function(){
+		  $(this).css("background-color",  "#FFFFFF");
+		   });
+  });
+ 
+  </script>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Concert Collective</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div id="galleria">
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-28210.jpg">
+                <img src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-28210.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-17999.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-17999.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-45557.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-45557.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-20675.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-20675.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-84253.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-84253.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-149339.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-149339.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-162332.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-162332.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-190793.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-190793.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-185329.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-185329.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-198667.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-198667.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-187653.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-187653.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-16099.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-16099.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-156716.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-156716.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-181314.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-181314.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-182799.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-182799.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-156715.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-156715.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-129979.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-129979.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-87712.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-87712.jpg"/>
+            </a>
+            <a href="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-187653.jpg">
+                <img 
+                    src="http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-187653.jpg"/>
+            </a>
+        </div>
+    <!-- Page Content -->
+    <div id="container" class="container">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Upcoming Events
+              
+                </h1>
+                
+            </div>
+        </div>
+        
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Concert Collective 2015</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    
+    <script src="js/jquery.js"></script>
+ <script>
+ // Load the classic theme
+    Galleria.loadTheme('galleria.classic.min.js');
+
+    // Initialize Galleria
+    Galleria.run('#galleria');
+ </script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
